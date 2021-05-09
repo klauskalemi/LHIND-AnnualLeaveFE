@@ -1,0 +1,36 @@
+.logo-container {
+  margin: 0;
+  padding: 15px 25px 0;
+  border-bottom: 1px solid #bbbbbb;
+  background-color: #c2c2f1;
+  color: #21206d;
+}
+
+.logo-container h2 {
+  text-align: center;
+  font-family: Consolas, serif;
+  font-weight: bolder;
+}
+
+.menu {
+  margin-top: 1em;
+  min-width: 215px;
+}
+
+.menu__items {
+  display: flex;
+  align-items: center;
+  color: #312fa5;
+  font-size: 15px;
+  height: 45px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 15px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.menu__items mat-icon {
+  color: #312fa5;
+  margin-right: 8px;
+}

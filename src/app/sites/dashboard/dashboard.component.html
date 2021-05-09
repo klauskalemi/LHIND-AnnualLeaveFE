@@ -1,0 +1,66 @@
+<div class="w-100 mb-3">
+  <mat-card class="mat-elevation-z4 dashboard-card">
+    <mat-card-header class="justify-content-between color--primary">
+      <mat-card-title class="my-2 content-width d-inline-block">Dashboard</mat-card-title>
+      <button mat-raised-button color="primary" class="bg--primary"
+              (click)="openLeaveRequestDialog()">New Request</button>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+<div class="row">
+  <div class="col-sm12 col-md-4 mb-3">
+    <mat-card class="mat-elevation-z4 dashboard-card">
+      <mat-card-header class="dashboard-card-header color--primary" *ngIf="daysOfProbationLeft">
+        <mat-card-title>{{ daysOfProbationLeft }}</mat-card-title>
+        <mat-card-subtitle>Days left until probation period ends</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-header class="dashboard-card-header color--primary" *ngIf="!daysOfProbationLeft">
+        <mat-card-title>-</mat-card-title>
+        <mat-card-subtitle>You are not on probation</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <div class="col-sm12 col-md-4 mb-3">
+    <mat-card class="mat-elevation-z4 dashboard-card">
+      <mat-card-header class="dashboard-card-header color--primary" *ngIf="daysOfLeaveLeft">
+          <mat-card-title>{{ daysOfLeaveLeft }}</mat-card-title>
+          <mat-card-subtitle>Days of leave left</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-header class="dashboard-card-header color--primary" *ngIf="!daysOfLeaveLeft">
+          <mat-card-title>-</mat-card-title>
+          <mat-card-subtitle>You are not on a leave</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <div class="col-sm12 col-md-4 mb-3">
+    <mat-card class="mat-elevation-z4 dashboard-card">
+      <mat-card-header class="dashboard-card-header color--primary" *ngIf="totalDaysOfLeave">
+          <mat-card-title>{{ totalDaysOfLeave }}</mat-card-title>
+          <mat-card-subtitle>Total days of leave</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-header class="dashboard-card-header color--primary" *ngIf="!totalDaysOfLeave">
+        <mat-card-title>-</mat-card-title>
+        <mat-card-subtitle>You took no days of leave so far</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>
+
+<div class="w-100">
+  <mat-card class="mat-elevation-z4 dashboard-card">
+    <mat-card-header class="dashboard-card-header color--primary">
+      <mat-card-title>Leave History</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <app-leave-requests-table
+        [leaveRequests]="getObservable((currentUser$ | async).leaveRequests)"
+        [isSupervisorMode]="false"
+        (edit)="openLeaveRequestDialog($event)"
+        (delete)="deleteLeaveRequest($event)"
+      ></app-leave-requests-table>
+    </mat-card-content>
+  </mat-card>
+</div>

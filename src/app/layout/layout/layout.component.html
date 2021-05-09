@@ -1,0 +1,28 @@
+<mat-sidenav-container autosize>
+  <mat-sidenav
+    #sidenav
+    id="sav"
+    class="pl-xs mat-sidenav-fixed"
+    fixedTopGap="0"
+    [mode]="mobileQuery.matches ? 'side' : 'over'"
+    [opened]="mobileQuery.matches"
+    [disableClose]="mobileQuery.matches">
+    <app-side-navbar class="app-sidebar"></app-side-navbar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div [class.menu-closed]="!(sidenav.opened && mobileQuery.matches)">
+      <app-header
+        [isAuthenticated]="isUserAuthenticated"
+        [username]="currentUsername"
+        (toggleMenu)="sidenav.toggle()"
+        (logout)="onLogout()"
+        (changePassword)="onChangePassword()">
+      </app-header>
+    </div>
+
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

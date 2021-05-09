@@ -1,0 +1,21 @@
+::ng-deep body {
+  background: rgb(235, 235, 235) url('../../../assets/images/auth-background.png');
+}
+
+.auth-container {
+  position: relative;
+  height: 100vh;
+}
+
+.auth-card {
+  top: 50%;
+  margin: 0 auto;
+  width: 400px;
+  transform: translateY(-50%)
+}
+
+.auth-card .auth-card-header {
+  display: block;
+  width: 100%;
+  text-align: center;
+}

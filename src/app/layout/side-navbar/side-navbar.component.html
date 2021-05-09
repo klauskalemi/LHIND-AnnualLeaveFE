@@ -1,0 +1,33 @@
+<section class="logo-container">
+  <h2>Annual Leave</h2>
+</section>
+
+<mat-nav-list class="menu">
+  <mat-list-item routerLinkActive="selected">
+    <a class="menu__items" [routerLink]="['/home']">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item *ngIf="userIsSupervisor" routerLinkActive="selected">
+    <a class="menu__items" [routerLink]="['/leave-requests']">
+      <mat-icon>event</mat-icon>
+      <span>Leave Requests</span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item *ngIf="userIsAdmin" routerLinkActive="selected">
+    <a class="menu__items" [routerLink]="['/users']">
+      <mat-icon>manage_accounts</mat-icon>
+      <span>Users</span>
+    </a>
+  </mat-list-item>
+
+  <mat-list-item *ngIf="userIsSupervisor" routerLinkActive="selected">
+    <a class="menu__items" [routerLink]="['/reports']">
+      <mat-icon>insert_chart_outlined</mat-icon>
+      <span>Reports</span>
+    </a>
+  </mat-list-item>
+</mat-nav-list>

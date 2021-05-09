@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.content-height {
+  height: fit-content;
+}
+
+.content-width {
+  width: fit-content;
+}
+
+.bg--primary {
+  background-color: #312fa5;
+}
+
+.color--primary {
+  color: #312fa5;
+}
+
+.button-action {
+  display: inline-block !important;
+  height: 32px !important;
+  width: 32px !important;
+  padding: 0 !important;
+}
+
+.button-action:first-child {
+  margin-right: 4px;
+}
+
+.button-action>span {
+  padding: 0 !important;
+  line-height: 32px !important;
+}
+
+.button-action>span>mat-icon {
+  height: 30px;
+  width: 24px;
+}
+
+.loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

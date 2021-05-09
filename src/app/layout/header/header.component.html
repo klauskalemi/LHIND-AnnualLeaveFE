@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="topbar">
+  <button mat-icon-button (click)="toggleMenu.emit()" class="sidebar-toggle" value="sidebarclosed">
+    <mat-icon id="toggle-menu-icon">menu</mat-icon>
+  </button>
+
+  <span fxFill class="spacer"></span>
+
+  <ng-container *ngIf="true || isAuthenticated">
+    <h4>{{ username }}</h4>
+    <button mat-icon-button [matMenuTriggerFor]="profile">
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+  </ng-container>
+</mat-toolbar>
+
+<mat-menu #profile="matMenu" class="mymegamenu">
+  <button (click)="changePassword.emit()" mat-menu-item>
+    <mat-icon>vpn_key</mat-icon>
+    Change Password
+  </button>
+  <button (click)="logout.emit()" mat-menu-item>
+    <mat-icon>exit_to_app</mat-icon>
+    Sign Out
+  </button>
+</mat-menu>

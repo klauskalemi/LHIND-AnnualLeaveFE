@@ -1,0 +1,14 @@
+mat-sidenav-content .page-content {
+  min-height: 100vh;
+  max-width: 100%;
+  padding: 75px 0.9em 0.9em 0.9em;
+  position: relative;
+}
+
+mat-sidenav-content app-header {
+  width: calc(100% - 215px);
+}
+
+.menu-closed app-header {
+  width: 100%;
+}

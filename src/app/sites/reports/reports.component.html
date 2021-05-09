@@ -1,0 +1,27 @@
+<div class="w-100 mb-3">
+  <mat-card class="mat-elevation-z4 dashboard-card">
+    <mat-card-header class="color--primary">
+      <mat-card-title class="my-2 content-width d-inline-block">Reports</mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+<div class="row">
+  <div *ngFor="let report of reports" class="col-sm12 col-md-4 mb-3">
+    <mat-card class="mat-elevation-z4 dashboard-card">
+      <mat-card-header class="dashboard-card-header color--primary">
+        <mat-card-title class="text-uppercase">{{ report.name }}</mat-card-title>
+        <mat-card-subtitle>{{ report.description }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <div fxLayoutAlign="end">
+          <button mat-raised-button
+                  color="primary"
+                  class="bg--primary"
+                  (click)="report.reportFunction()">Download
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
